@@ -22,12 +22,13 @@ jobs:
           java-version: '12.x'
 
       # Setup the flutter environment.
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v2
+      - name: setup mobile ci
+          working-directory: ./mobile
         with:
           #channel: 'beta' # 'dev', 'alpha', default to: 'stable'
           flutter-version: '3.0.0' # you can also specify exact version of flutter
-      - name: setup mobile ci
-        working-directory: ./mobile
+
       # Get flutter dependencies.
       - run: flutter --version
       - run: flutter pub get
@@ -65,11 +66,12 @@ jobs:
 
       # Setup the flutter environment.
       - uses: subosito/flutter-action@v2
+      - name: setup admin ci
+        working-directory: ./admin
         with:
           #channel: 'beta' # 'dev', 'alpha', default to: 'stable'
           flutter-version: '3.0.0' # you can also specify exact version of flutter
-      - name: setup admin ci
-        working-directory: ./admin
+
       # Get flutter dependencies.
       - run: flutter --version
       - run: flutter pub get
