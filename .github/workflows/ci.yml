@@ -27,7 +27,7 @@ jobs:
           #channel: 'beta' # 'dev', 'alpha', default to: 'stable'
           flutter-version: '3.0.0' # you can also specify exact version of flutter
       - name: setup mobile ci
-          working-directory: ./mobile
+        working-directory: ./mobile
       # Get flutter dependencies.
       - run: flutter --version
       - run: flutter pub get
