@@ -16,8 +16,6 @@ jobs:
     steps:
 
       # Setup Java environment in order to build the Android app.
-      - name: setup mobile ci
-        working-directory: ./mobile
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v2
         with:
@@ -28,7 +26,8 @@ jobs:
         with:
           #channel: 'beta' # 'dev', 'alpha', default to: 'stable'
           flutter-version: '3.0.0' # you can also specify exact version of flutter
-
+      - name: setup mobile ci
+          working-directory: ./mobile
       # Get flutter dependencies.
       - run: flutter --version
       - run: flutter pub get
@@ -58,8 +57,7 @@ jobs:
     steps:
 
       # Setup Java environment in order to build the Android app.
-      - name: setup mobile ci
-        working-directory: ./admin
+
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
         with:
@@ -71,7 +69,8 @@ jobs:
         with:
           #channel: 'beta' # 'dev', 'alpha', default to: 'stable'
           flutter-version: '3.0.0' # you can also specify exact version of flutter
-
+      - name: setup admin ci
+        working-directory: ./admin
       # Get flutter dependencies.
       - run: flutter --version
       - run: flutter pub get
