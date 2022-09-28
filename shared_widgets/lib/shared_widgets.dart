@@ -1,7 +1,4 @@
 library shared_widgets;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:shared_widgets/colors/app_colors.dart';
+export 'package:shared_widgets/theme/app_theme.dart';
